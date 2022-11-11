@@ -1,0 +1,18 @@
+{% extends "authenticate/addpet.html" %}
+
+{% block content %}
+<center>
+    <h1>Edit Pet Information</h1>
+    <br/><br/>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br/>
+        <input type="submit" value="Update" class="btn btn-primary">
+    </form>
+    
+    
+</center>
+    
+    
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "authenticate/addpet.html" %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="yourPage-container">
+    <div class="your-icon">
+        <img src="{% static 'petsitterapp/image/nuria.jpg' %}">
+    </div>
+    <div class="your-info">
+        <h1 class="your-name">Hi, Nuria</h1>
+        <p id="location">West Lafayette, IN 47906</p>
+        <p>meng147@purdue.edu</p>
+        
+        <button type="button" class="btn btn-info" id="createButton">click here</button>
+        <ul id="text"></ul>
+        
+    </div>
+    <div class="tab">
+        <div class="tab-list">
+            <a href="#">Edit Profile</a>
+            <a href="#">Message</a>
+            <a href="#">Order History</a>
+            <a href="#">Setting</a>
+        </div>
+    </div>
+    <div class="pet-info">
+        <h1>Pets Information</h1>
+        <div class="pet-list">
+            {% for pet in pet_list %}
+                <div class="pet">
+                    <img src="{{ pet.pic.url }}">
+                    <span class="pet-text">
+                        <h2>{{pet.info}}</h2>
+                        <p>{{pet.introduction}}</p>
+                        <br/><br/><br/>
+                        <a href="{% url 'editpet' pet.id %}">Edit<i class="fa-solid fa-pen"></i></a>
+                    </span>
+                </div>
+            {% endfor %}
+            <div class="add">
+                <a href="{% url 'addpet' %}"><i class="fa-solid fa-plus"></i>Add a new pet</a>
+            </div>
+        </div>
+    </div>
+    <div class="your-reviews">
+        <a href="#" class="reviewsByYou">Reviews by you</a>
+    </div>
+</div>
+
+{% endblock %}
+
