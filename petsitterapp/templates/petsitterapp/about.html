@@ -1,5 +1,22 @@
 {% extends "petsitterapp/base.html" %}
 
 {% block content %}
-<h1>Our Stories</h1>
+{% load static %}
+<div class="aboutus">
+  <h1>Our Stories</h1>
+  <div class="whoweare">
+    <img src="{% static 'petsitterapp/image/dog_staff2.jpg' %}"/> <!-- image source: https://unsplash.com/photos/6GY_pIXBEm0 -->
+    <div class="who">
+      <h3 id="titlewho">Who We Are</h3>
+      <p id="textwho">LovingHeart is no-kill animal shelter in Greenwood area, Indiana. Since 2005, LovingHeart has placed over 3,000 dogs and cats in permanent homes. We receive no government support, relying solely on donations of time, service, and money from our supporters, the public, and area businesses. </p>
+    </div>
+  </div>
+  <div class="whatwedo">
+    <div class="what">
+      <h3 id="titlewhat">What We Do</h3>
+      <p id="textwhat">LovingHeart promotes public awareness regarding the value of pets, animal welfare, pet overpopulation, and quality human-animal companionship through education and outreach programs.</p>
+    </div>
+    <img src="{% static 'petsitterapp/image/cat_staff.jpg' %}"/><!-- image source: https://www.pinterest.com/pin/445997169349048508/ -->
+  </div>
+</div>
 {% endblock %}

@@ -206,9 +206,71 @@ nav{
     cursor: pointer;
 }
 
+/*------------------aboutusPage--------------------*/
 
-
-
+/* Center the about us heading */
+.aboutus h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  
+  /* Set the width of whoweare image*/
+  .whoweare img {
+      width: 50%;
+  }
+  
+  /* Set the image width specifically for firefox */
+  @-moz-document url-prefix() {
+    .whoweare img {
+          width: 225%;
+    }
+  }
+  
+  /* Pack whoweare items around the center in a flexible container */
+  .whoweare {
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    background-color: #fbf9f9;
+    text-align: center;
+    overflow:auto;
+  }
+  
+  /* Pack whatwedo items around the center in a flexible container */
+  .whatwedo {
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    background-color: #fbf9f9;
+    text-align: center;
+    overflow:auto;
+  }
+  
+  /* Set the width of whatwedo image*/
+  .whatwedo img {
+      width: 50%;
+  }
+  
+  /* Set the image width specifically for Firefox */
+  @-moz-document url-prefix() {
+    .whatwedo img {
+          width: 148%;
+    }
+  }
+  
+  /* 
+  Media query for caption text on screen less than 600px, 
+  let the browser put all elements in a vertical line
+  */
+  @media only screen and (max-width: 600px) {
+      .whoweare img, .whatwedo img {
+          width: 100%;
+      }
+      .whoweare, .whatwedo {
+          display:block;
+      }
+  }
 
 /*-------------------sittersPage-------------------*/
 
