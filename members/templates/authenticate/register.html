@@ -10,7 +10,7 @@
 {% block content %}      
 <div class="login-window"> 
     <div class="login-box">
-        <form action="" method="POST">
+        <form action="{% url 'register' %}" method="POST">
             {% csrf_token %}
             <img src="{% static 'petsitterapp/image/logo.jpg' %}" class="login-logo">
             <div class="username">
@@ -19,8 +19,14 @@
             <div class="password">
                 <input type="password" name="password" placeholder="password">
             </div>
+            <div class="password">
+                <input type="password" name="password-repeat" placeholder="re-enter your password">
+            </div>
+            <div class="email">
+                <input type="text" name="email" placeholder="email">
+            </div>
             <div class="login-btn">
-                <button type="submit">Log in</button>
+                <button type="submit">Register Now</button>
             </div>
         </form>
         <div class="message">
@@ -33,7 +39,7 @@
             </center>
         </div> 
         <div class="signup-box">
-            <p>Don’t have an account?<span><a href="{% url 'register' %}">Sign up</a></span></p>
+            <p>Already have an account?<span><a href="{% url 'login' %}">Login</a></span></p>
         </div>
     </div>
     
