@@ -10,10 +10,11 @@
         <img src="{% static 'petsitterapp/image/nuria.jpg' %}">
     </div>
     <div class="your-info">
-        <h1 class="your-name">Hi, Nuria</h1>
-        <p id="location">West Lafayette, IN 47906</p>
-        <p>meng147@purdue.edu</p>
-        
+        <h1 class="your-name"><b>Username: </b>{{ user_info.username }}</h1>
+        <p id="location"><b>Address: </b>West Lafayette, IN 47906</p>
+        <p><b>Email: </b>{{ user_info.email }}</p>
+        <p><b>Last Login Time: </b>{{ user_info.login_time }}</p>
+
         <button type="button" class="btn btn-info" id="createButton">click here</button>
         <ul id="text"></ul>
         
