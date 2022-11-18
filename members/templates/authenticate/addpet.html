@@ -31,7 +31,7 @@
             <li class="link"><a href="{% url 'sitter' %}">Pet Sitters</a></li>
         </ul>
         <ul class="login">
-            <a href="{% url 'yourpage' %}" class="signin-btn">Nuria</a>
+            <a href="{% url 'yourpage' %}" class="signin-btn"> {{ request.user.username }}</a>
             <a href="{% url 'logout' %}" class="register-btn">Log out</a>
         </ul>
     </nav>
