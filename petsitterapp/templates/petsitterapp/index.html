@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charest="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PettyCare</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'petsitterapp/style1.css' %}">
+    <script src="https://kit.fontawesome.com/4ff6aa6212.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        {% block nav %}
+        <nav>
+            <img src="{% static 'petsitterapp/image/logo.jpg' %}" class="logo">
+            <ul class="nav-links">
+                <li class="menu"><a href="#">Menu</a>
+                    <ul class="drop-down">
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About us</a></li>
+                        <li><a href="{% url 'sitter' %}">Sitters</a></li>
+                    </ul>
+                </li>
+                <li id="link"><a href="{% url 'index' %}">Home</a></li>
+                <li class="link"><a href="{% url 'about' %}">About us</a></li>
+                <li class="link"><a href="{% url 'sitter' %}">Pet Sitters</a></li> 
+            </ul>
+            <ul class="login">     
+                {% if user.is_authenticated %}
+                <a href="{% url 'yourpage' %}" class="signin-btn">Nuria</a>
+                <a href="{% url 'logout' %}" class="register-btn">Log Out</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="signin-btn">Sign in</a>
+                    <a href="#" class="register-btn">Sign up</a>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endblock %}
+        {% block content %}
+        <div class="search-container">
+            <h1>Find loving pet sitter here in petty care</h1>
+            <div class="search">
+                <form action="{% url 'sitter' %}">
+                    <div class="row">
+                        <div class="input">
+                            <label>Boarding Here: </label>
+                            <input type="text" placeholder="Enter zip code or city">
+                        </div>
+                        <div class="input">
+                            <label>Drop off: </label>
+                            <input type="text" placeholder="Add date">
+                        </div>
+                        <div class="input">
+                            <label>Pick up: </label>
+                            <input type="text" placeholder="Add date">
+                        </div>
+                        <div class="input">
+                            <label>Pet type: </label>
+                            <div class="pet-option">
+                                <select id="pet-type">
+                                    <option value="">cat</option>
+                                    <option value="">dog</option>
+                                    <option value="">others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="search-btn">
+                            <button type="submit">Search</button>
+                        </div>
+                    </div>                  
+                </form>
+            </div>
+        </div>
+        <div class="search-mini">
+            <form action="">
+                <input type="text" placeholder="search sitters">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        {% endblock %}
+    </div>
+
+    {% block footer %}
+    <div class="footer">
+        <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>    
+        <hr>
+        <p>Contact Kexin Meng: meng147@purdue.com</p>
+    </div>
+    {% endblock %}
+    
+
+
+
+</body>
+</html>
+    

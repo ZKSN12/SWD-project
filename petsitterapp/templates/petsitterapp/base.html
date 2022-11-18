@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charest="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PettyCare-profile</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'petsitterapp/style1.css' %}">
+    <script src="https://kit.fontawesome.com/4ff6aa6212.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="{% static 'petsitterapp/pettycare.js' %}"></script>    
+</head>
+
+
+
+<body>
+    {% block nav %}
+    <nav>
+        <img src="{% static 'petsitterapp/image/logo.jpg' %}" class="logo">
+        <ul class="nav-links">
+            <li class="menu"><a href="#">Menu</a>
+                <ul class="drop-down">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About us</a></li>
+                    <li><a href="{% url 'sitter' %}">Sitters</a></li>
+                </ul>
+            </li>
+            <li class="link"><a href="{% url 'index' %}">Home</a></li>
+            <li class="link"><a href="{% url 'about' %}">About us</a></li>
+            <li class="link"><a href="{% url 'sitter' %}">Pet Sitters</a></li>
+        </ul>
+        <ul class="login">
+            {% if user.is_authenticated %}
+                <a href="{% url 'yourpage' %}" class="signin-btn">Nuria</a>
+                <a href="{% url 'logout' %}" class="register-btn">Log Out</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="signin-btn">Sign in</a>
+                <a href="#" class="register-btn">Sign up</a>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endblock %}
+
+    {% block content %}
+        content
+    {% endblock %}
+
+    {% block footer %}
+    <div class="footer">
+        <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.ticktok.com/"><i class="fa-brands fa-tiktok"></i></a>    
+        <hr>
+        <p>Contact Kexin Meng: meng147@purdue.com</p>
+    </div>
+    {% endblock %}
+    
+</body>
+</html>
