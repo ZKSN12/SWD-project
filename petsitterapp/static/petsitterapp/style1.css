@@ -6,6 +6,7 @@
 }
 
 /*------------------------homePage-------------------------*/
+
 .header{
     min-height: 100vh;
     width: 100%;
@@ -135,7 +136,7 @@ nav{
     
 }
 
-.search .row .input input[type="text"]{
+.search .row .input input{
     border: none;
     font-size: 17px;
     padding-left: 5px;
@@ -206,6 +207,7 @@ nav{
     cursor: pointer;
 }
 
+
 /*------------------aboutusPage--------------------*/
 
 /* Center the about us heading */
@@ -213,64 +215,64 @@ nav{
     text-align: center;
     margin-top: 50px;
     margin-bottom: 40px;
-  }
+}
   
   /* Set the width of whoweare image*/
-  .whoweare img {
+.whoweare img {
       width: 50%;
-  }
+}
   
   /* Set the image width specifically for firefox */
-  @-moz-document url-prefix() {
+@-moz-document url-prefix() {
     .whoweare img {
           width: 225%;
     }
-  }
+}
   
   /* Pack whoweare items around the center in a flexible container */
-  .whoweare {
+.whoweare {
     font-size: 20px;
     display: inline-flex;
     align-items: center;
     background-color: #fbf9f9;
     text-align: center;
     overflow:auto;
-  }
+}
   
   /* Pack whatwedo items around the center in a flexible container */
-  .whatwedo {
+.whatwedo {
     font-size: 20px;
     display: inline-flex;
     align-items: center;
     background-color: #fbf9f9;
     text-align: center;
     overflow:auto;
-  }
+}
   
   /* Set the width of whatwedo image*/
-  .whatwedo img {
+.whatwedo img {
       width: 50%;
-  }
+}
   
   /* Set the image width specifically for Firefox */
-  @-moz-document url-prefix() {
+@-moz-document url-prefix() {
     .whatwedo img {
           width: 148%;
     }
-  }
+}
   
   /* 
   Media query for caption text on screen less than 600px, 
   let the browser put all elements in a vertical line
   */
-  @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
       .whoweare img, .whatwedo img {
           width: 100%;
       }
       .whoweare, .whatwedo {
           display:block;
       }
-  }
+}
 
 /*-------------------sittersPage-------------------*/
 
@@ -439,18 +441,21 @@ nav{
     color: #000;
 }
 
-.info .left button{
+.info .left button {
     font-weight: 600;
     font-size: 28px;
     margin: 20px 2.2vw;
     padding: 5px 10px;
     float: left;
     color: rgb(29, 79, 164);
+    text-decoration: none;
     border: none;
     background-color: rgb(255, 210, 210);
     border-radius: 15px;
     cursor: pointer;
 }
+
+
 
 .info .left button:hover{
     background-color: rgb(228, 131, 255);
@@ -540,25 +545,6 @@ nav{
     border-radius: 15px;
 }
 
-.toggle button{
-    float: right;
-    font-weight: 500;
-    font-size: 22px;
-    margin: 5px 2.5vw;
-    padding: 5px 10px;
-    color: rgb(29, 79, 164);
-    border: none;
-    background-color: rgb(255, 210, 210);
-    border-radius: 15px;
-    cursor: pointer;
-}
-
-.toggle button:hover{
-    background-color: rgb(252, 167, 255);
-}
-
-
-
 .reviews .comment{
     display: block;
     width: 80%;
@@ -574,7 +560,7 @@ nav{
     height: 100px;
 }
 
-.reviews .comment button[type="button"]{
+.reviews .comment .comment-box button{
     font-weight: 600;
     font-size: 28px;
     margin: 20px 2.2vw;
@@ -588,7 +574,7 @@ nav{
 }
 
 
-.reviews .comment button:hover[type="button"]{
+.reviews .comment .comment-box button:hover{
     background-color: rgb(228, 131, 255);
 }
 
@@ -631,12 +617,6 @@ nav{
 
 .login-box .username{
     padding: 0 38px;
-    width: 300px;
-    height: 50px;
-}
-
-.login-box .email{
-    padding: 0px 38px;
     width: 300px;
     height: 50px;
 }
@@ -700,11 +680,10 @@ nav{
 .yourPage-container{
     display: grid;
     grid-template-columns: 2fr 3fr;
-    grid-template-rows: .2fr .5fr 200px;
+    grid-template-rows: .2fr .5fr;
     grid-template-areas: 
     "your-icon your-info"
-    "tab pet-info"
-    "tab your-reviews";
+    "tab pet-info";
 
 }
 
@@ -835,18 +814,6 @@ nav{
     margin-right: 5px;
 }
 
-.your-reviews{
-    grid-area: your-reviews;
-    margin: 20px 2.2vw;
-    padding-top: 30px;
-    padding-left: 20px;
-}
-
-.your-reviews a{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 30px;
-    color: rgb(18, 18, 18);
-}
 
 
 /*-------------------footer-------------------*/
@@ -926,13 +893,12 @@ nav{
 
     .yourPage-container{
         grid-template-columns: 1fr;
-        grid-template-rows: .2fr .2fr .1fr .3fr .1fr;
+        grid-template-rows: .2fr .2fr .1fr .3fr;
         grid-template-areas: 
         "your-icon"
         "tab"
         "your-info"   
-        "pet-info"
-        "your-reviews";
+        "pet-info";
     }
     
 }

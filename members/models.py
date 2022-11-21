@@ -10,8 +10,3 @@ class PetInfo(models.Model):
     def __str__(self):
         return self.info
 
-class Tags(models.Model):
-    tag = models.CharField(max_length=120,default="0")
-    
-    def __str__(self):
-        return self.tag
