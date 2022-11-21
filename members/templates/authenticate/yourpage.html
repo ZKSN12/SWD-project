@@ -15,16 +15,12 @@
         <p><b>Email: </b>{{ user_info.email }}</p>
         <p><b>Last Login Time: </b>{{ user_info.login_time }}</p>
 
-        <button type="button" class="btn btn-info" id="createButton">click here</button>
-        <ul id="text"></ul>
         
     </div>
     <div class="tab">
         <div class="tab-list">
             <a href="#">Edit Profile</a>
-            <a href="#">Message</a>
-            <a href="#">Order History</a>
-            <a href="#">Setting</a>
+            <a href="{% url 'logout' %}">Log Out</a>
         </div>
     </div>
     <div class="pet-info">
@@ -45,9 +41,6 @@
                 <a href="{% url 'addpet' %}"><i class="fa-solid fa-plus"></i>Add a new pet</a>
             </div>
         </div>
-    </div>
-    <div class="your-reviews">
-        <a href="#" class="reviewsByYou">Reviews by you</a>
     </div>
 </div>
 

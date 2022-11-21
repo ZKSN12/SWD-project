@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 from .models import PetInfo
-from .models import Tags
+
 
 
 class PetForm(ModelForm):
@@ -13,11 +13,3 @@ class PetForm(ModelForm):
             'introduction': forms.TextInput(attrs={'class':'form-coontrol', 'placeholder':'an introduction of your pet'}),
         }
     
-class TagForm(ModelForm):
-    class Meta:
-        model = Tags
-        fields = ('tag',)
-        widgets = {
-            'tag': forms.TextInput(attrs={'class':'form-coontrol'}),
-            
-        }
