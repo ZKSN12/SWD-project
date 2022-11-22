@@ -10,8 +10,8 @@ from time import time
 from django.http import JsonResponse
 from django.forms.models import model_to_dict
 from petsitterapp.models import SitterProfile
-from .forms import PetForm, TagForm
-from .models import PetInfo, Tags
+from .forms import PetForm
+from .models import PetInfo
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View
 
