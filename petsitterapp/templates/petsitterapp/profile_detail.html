@@ -2,80 +2,96 @@
 
 {% load static %}
 {% block content %}
-<div class="main-container">
-    <div class="icon">
-        <img src={{object.sitter_img.url}}>
-    </div>
-    <div class="intro">
-        <h1>Introduction</h1>
-        <div class="content">
-            <p>{{object.story}}</p>
+    <div class="main-container">
+        <div class="icon">
+            <img src={{ object.sitter_img.url }}>
         </div>
-    </div>
-        
-    <div class="info">
-        <div class="left">
-            <h1 class="name">{{object.name}}</h1>
-            <p class="address">{{object.address}}</p>
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+        <div class="intro">
+            <h1>Introduction</h1>
+            <div class="content">
+                <p>{{ object.story }}</p>
             </div>
-            <p class="discriptioon">{{object.introduction}}</p>
-            <a href="mailto:meng147@purdue.edu?subject=Notice from PettyCare"><button>Send Email</button></a>
         </div>
-        <div class="right">
-            <div class="like"><button id="like-btn" type="button"><i class="fa-regular fa-heart"></i></button></div>
-            <div class="price">
-                {{object.price}}    
-            </div>                            
-        </div>
-    </div>
-    <div class="imgs">
-        <img src="{% static 'petsitterapp/image/catanddog.jpg' %}">
-        <img src="{% static 'petsitterapp/image/catanddog2.jpg' %}">
-        <img src="{% static 'petsitterapp/image/cat1.jpg' %}">
-        <img src="{% static 'petsitterapp/image/dog2.jpg' %}">            
-        <img src="{% static 'petsitterapp/image/dog3.jpg' %}">
-        <img src="{% static 'petsitterapp/image/dog.jpg' %}">                                
-    </div>
 
-    <div class="reviews">
-        <h1>Reviews</h1>
-        <div class="review-text">
-            {% if not object.comments.all %}
-                No Comments Yet...
-            {% else %}
-                {% for comment in object.comments.all %}
-                <div class="review">
-                    <h3>{{comment.user}}</h3>
-                    <p>{{comment.comment}}</p>
+        <div class="info">
+            <div class="left">
+                <h1 class="name">{{ object.name }}</h1>
+                <p class="address">{{ object.address }}</p>
+                <iframe
+                        width="80%"
+                        height="200"
+                        style="border:0; padding-left: 30px"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCffDPyT2Pr6kuV16AGxANxB3jaj-whg58
+    &q=WestLafayette&zoom=7">
+                </iframe>
+
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
                 </div>
-                {% endfor %}
-            {% endif %}
-            <div class="comment">
-                <h2>Leave a comment</h2>
-                {% if user.is_authenticated %}
-                    <div class="comment-box">
-                        <form action="" method="POST">
-                            <!-- {% csrf_token %}
-                            {{ form.as_p }} -->
-                            <input type="text" name="textComment" placeholder="comment here..."></textarea>
-                            <button id="post-btn" type="submit">Post</button>
-                        </form>
-                    </div>
-                {% else %}
-                    Please <a href="{% url 'login' %}">Login</a> to leave a comment...
-                {% endif %}
+                <p class="discriptioon">{{ object.introduction }}</p>
+                <a href="mailto:meng147@purdue.edu?subject=Notice from PettyCare">
+                    <button>Send Email</button>
+                </a>
             </div>
-        </div>        
+            <div class="right">
+                <div class="like">
+                    <button id="like-btn" type="button"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="price">
+                    {{ object.price }}
+                </div>
+
+            </div>
+        </div>
+        <div class="imgs">
+            <img src="{% static 'petsitterapp/image/catanddog.jpg' %}">
+            <img src="{% static 'petsitterapp/image/catanddog2.jpg' %}">
+            <img src="{% static 'petsitterapp/image/cat1.jpg' %}">
+            <img src="{% static 'petsitterapp/image/dog2.jpg' %}">
+            <img src="{% static 'petsitterapp/image/dog3.jpg' %}">
+            <img src="{% static 'petsitterapp/image/dog.jpg' %}">
+        </div>
+
+        <div class="reviews">
+            <h1>Reviews</h1>
+            <div class="review-text">
+                {% if not object.comments.all %}
+                    No Comments Yet...
+                {% else %}
+                    {% for comment in object.comments.all %}
+                        <div class="review">
+                            <h3>{{ comment.user }}</h3>
+                            <p>{{ comment.comment }}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <div class="comment">
+                    <h2>Leave a comment</h2>
+                    {% if user.is_authenticated %}
+                        <div class="comment-box">
+                            <form action="" method="POST">
+                                <!-- {% csrf_token %}
+                            {{ form.as_p }} -->
+                                <input type="text" name="textComment" placeholder="comment here..."></textarea>
+                                <button id="post-btn" type="submit">Post</button>
+                            </form>
+                        </div>
+                    {% else %}
+                        Please <a href="{% url 'login' %}">Login</a> to leave a comment...
+                    {% endif %}
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
-<script>
+    <script>
 
-</script>
+    </script>
 {% endblock %}
