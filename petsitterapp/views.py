@@ -6,6 +6,7 @@ from django.views.generic import ListView, DeleteView
 from django.views.generic.edit import FormMixin
 
 from django.urls import reverse
+from django.db.models import Q 
 
 
 # Create your views here.
@@ -32,3 +33,13 @@ def index(request):
 def about(request):
     return render(request, 'petsitterapp/about.html', {})
 
+class SearchResultsView(ListView):
+    model = SitterProfile
+    template_name = "petsitterapp/search.html"
+
+    def get_queryset(self): 
+        query = self.request.GET.get("q", None)
+        sitter_list = SitterProfile.objects.filter(
+            Q(name__contains=query) or Q(address__contains=query) or Q(price__contains=query)
+        )
+        return sitter_list
