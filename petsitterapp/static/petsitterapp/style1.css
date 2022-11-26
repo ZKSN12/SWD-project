@@ -349,8 +349,14 @@ nav{
     margin-top: 40px
 }
 
+/*------------------searchPage--------------------*/
 
-
+/* Center the about us heading */
+.search-results h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
 
 /*-----------------ProfilePage--------------------*/
 

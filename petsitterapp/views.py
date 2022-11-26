@@ -40,6 +40,6 @@ class SearchResultsView(ListView):
     def get_queryset(self): 
         query = self.request.GET.get("q", None)
         sitter_list = SitterProfile.objects.filter(
-            Q(name__contains=query) or Q(address__contains=query) or Q(price__contains=query)
+            Q(name__contains=query) | Q(address__contains=query) | Q(price__contains=query)
         )
         return sitter_list

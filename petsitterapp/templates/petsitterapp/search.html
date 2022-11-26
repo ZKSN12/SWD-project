@@ -12,29 +12,31 @@
     {% endfor %}
   </ul>
 </div> -->
-<div class="sitters-container">
+<div class="search-results">
   <h1>Search Results</h1>
-  {% for sitter in object_list %}
-  <div class="card-container">
+  <div class="sitters-container">
+    {% for sitter in object_list %}
+    <div class="card-container">
       <img src={{sitter.sitter_img.url}} >           
       <span>
-          <h3 class="name"><a href="{% url 'profile-detail' pk=sitter.pk %}">{{sitter.name}}</a></h3>
-          <div class="like"><i class="fa-regular fa-heart"></i></div> 
-          <p>{{sitter.address}}</p>
-          <div class="rating">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-          </div>
-          <p class="content">{{sitter.introduction}}</p>
-          
-          <p class="price">{{sitter.price}}</p>
+        <h3 class="name"><a href="{% url 'profile-detail' pk=sitter.pk %}">{{sitter.name}}</a></h3>
+        <div class="like"><i class="fa-regular fa-heart"></i></div> 
+        <p>{{sitter.address}}</p>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="content">{{sitter.introduction}}</p>
+        
+        <p class="price">{{sitter.price}}</p>
           
       </span>           
+    </div>
+    {% endfor %}
+    
   </div>
-  {% endfor %}
-  
 </div>
 {% endblock %}
