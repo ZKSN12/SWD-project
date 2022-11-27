@@ -41,14 +41,15 @@
         {% if submitted %}
             <p>successfully submitted</p>
         {% else %}
-        <h1>Add a New pet</h1>
-        <br/><br/>
-
-            <form action="" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" value="Submit" class="btn btn-primary">
-            </form>
+        <div class="add-form">
+            <h1>Add a New pet</h1>
+            <br/><br/>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </form>            
+        </div>
         {% endif %}
     </center>
     {% endblock %}

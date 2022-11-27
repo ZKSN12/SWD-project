@@ -5,9 +5,7 @@ from .models import Comment
 class CommentForm(ModelForm):
     class Meta:
         model = Comment
-        fields = ('user','comment','sitterProfile',)
+        fields = ('comment',)
         widgets = {
-            'comment': forms.Textarea(attrs={'class':'form-coontrol', 'placeholder':'Comment Here'}),
-            'sitterProfile': forms.HiddenInput()
+            'comment': forms.Textarea(attrs={'class':'form-control', 'placeholder':'Comment Here', 'rows': '5'}),
         }
-    

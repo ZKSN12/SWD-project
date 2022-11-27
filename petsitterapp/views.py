@@ -3,7 +3,7 @@ from .models import SitterProfile
 from .models import Comment
 from .forms import CommentForm
 from django.views.generic import ListView, DeleteView
-from django.views.generic.edit import FormMixin
+
 
 from django.urls import reverse
 from django.db.models import Q 
@@ -18,7 +18,26 @@ class sitterView(ListView):
 class ProfileDetailView(DeleteView):
     model = SitterProfile
     template_name = 'petsitterapp/profile_detail.html'
+    form = CommentForm
+    
+    def get_success_url(self):
+        return reverse('profile-detail', args=(self.kwargs['pk'],))
 
+
+    def get_context_data(self, **kwargs):
+        context = super(ProfileDetailView, self).get_context_data(**kwargs)
+        context['form'] = self.form
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            post = self.get_object()
+            form.instance.user = request.user
+            form.instance.sitterProfile = post
+            form.save()
+
+            return redirect(reverse('profile-detail', args=(self.kwargs['pk'],)))
 
 def base(request):
     return render(request, 'petsitterapp/base.html', {})

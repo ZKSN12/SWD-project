@@ -1,7 +1,8 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 # Create your models here.
-
+User = get_user_model()
 
 class SitterProfile(models.Model):
     name = models.CharField(max_length=120)
@@ -18,11 +19,11 @@ class SitterProfile(models.Model):
         return self.name
 
 class Comment(models.Model):
-    user = models.CharField(max_length=120)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     comment = models.TextField(max_length=2000)
     sitterProfile = models.ForeignKey(SitterProfile, related_name="comments",blank=True, null=True, on_delete=models.CASCADE)
-
+    
     def __str__(self):
-        return self.sitterProfile.name
+        return self.comment
 
 
