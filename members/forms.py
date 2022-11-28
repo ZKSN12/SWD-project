@@ -9,7 +9,7 @@ class PetForm(ModelForm):
         model = PetInfo
         fields = ('info', 'pic', 'introduction')
         widgets = {
-            'info': forms.TextInput(attrs={'class':'form-coontrol', 'placeholder':'pet type and age'}),
-            'introduction': forms.TextInput(attrs={'class':'form-coontrol', 'placeholder':'an introduction of your pet'}),
+            'info': forms.TextInput(attrs={'placeholder':'pet type and age'}),
+            'introduction': forms.TextInput(attrs={'placeholder':'an introduction of your pet'}),
         }
     
