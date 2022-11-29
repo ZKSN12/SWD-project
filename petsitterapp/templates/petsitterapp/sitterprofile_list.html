@@ -3,22 +3,22 @@
 {% block content %}
 <div class="search-container">
     <div class="search">
-        <form>
+        <form action="{% url 'search' %}" method="get">
             <div class="row">
                 <div class="input">
                     <label>Boarding Here: </label>
-                    <input type="text" placeholder="Enter zip code or city">
+                    <input name="bigq" type="text" placeholder="Enter zip code or city">
                 </div>
                 <div class="input">
                     <label>$Min: </label>
-                    <input type="number" placeholder="Minimum price">
+                    <input name="bigq" type="number" placeholder="Minimum price">
                 </div>
                 <div class="input">
                     <label>$Max: </label>
-                    <input type="number" placeholder="Maximum price">
+                    <input name="bigq" type="number" placeholder="Maximum price">
                 </div>
                 <div class="search-btn">
-                    <button type="submit">RESET</button>
+                    <button type="submit">Search</button>
                 </div>
             </div>                  
         </form>
@@ -26,8 +26,8 @@
 </div>
 
 <div class="search-mini">
-    <form action="">
-        <input type="text" placeholder="search sitters">
+    <form action="{% url 'search' %}" method="get">
+        <input name="q" type="text" placeholder="search sitters">
         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 </div>

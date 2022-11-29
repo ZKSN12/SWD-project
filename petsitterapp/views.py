@@ -57,8 +57,14 @@ class SearchResultsView(ListView):
     template_name = "petsitterapp/search.html"
 
     def get_queryset(self): 
-        query = self.request.GET.get("q", None)
-        sitter_list = SitterProfile.objects.filter(
-            Q(name__contains=query) | Q(address__contains=query) | Q(price__contains=query)
-        )
+        querybig = self.request.GET.getlist("bigq")
+        if querybig:  
+            sitter_list = SitterProfile.objects.filter(
+            Q(zipcode__contains=querybig[0]) & Q(price_number__gte=querybig[1]) & Q(price_number__lte=querybig[2])
+            ) 
+        else:
+            querymini = self.request.GET.get("q")
+            sitter_list = SitterProfile.objects.filter(
+            Q(zipcode__contains=querymini) | Q(name__contains=querymini) | Q(address__contains=querymini) | Q(price_number__contains=querymini)
+            )
         return sitter_list
