@@ -1,6 +1,7 @@
 # SWD-project
 
 # Instructions for installation
-**Implemented Bootstrap in th app.**
-<br />
+
+**Implemented Bootstrap in the app** <br/>
+
     pip install -r requirements.txt
