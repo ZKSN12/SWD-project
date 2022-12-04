@@ -1,7 +1,8 @@
 # SWD-project
 ## Motivation and target users
-<br/>
-**External Libraries: BootStrap**
+
+__External Libraries: BootStrap__
+
 <br/>
 URLs and features of the Petty Care web app:
 
