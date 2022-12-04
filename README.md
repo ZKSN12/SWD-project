@@ -54,7 +54,6 @@ URLs and features of the Petty Care web app:
     
 On the user’s profile page, they can add and edit their pet information.
     
-
 ## Application Setup Instruction
 
 1. Navigate to SWD-project folder
@@ -72,10 +71,14 @@ On the user’s profile page, they can add and edit their pet information.
     
 5. Open the Chrome browser, and enter the URL:
     
-    http://18.218.104.41:8001/petsitterapp/
+    http://127.0.0.1:8000/petsitterapp/
 6. Login using test credential:
    
     username: kexin
    
     password: milkis123
+
+## Cloud Hosted Web App
+
+Access the public Petty Care web app through http://18.218.104.41:8001/petsitterapp/
 
