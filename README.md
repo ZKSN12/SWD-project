@@ -12,15 +12,15 @@ URLs and features of the Petty Care web app:
 
 - /petsitterapp/ — Present the home (index) page
 - /petsitterapp/sitter/ — List all pet sitters
-- etsitterapp/profile/<id>/ — Present the detail information of a pet sitter
-- etsitterapp/about/ — Introduce the Pet Care team and services
-- etsitterapp/searchresult/ — List pet sitters based on search criterias
-- embers/login/ — Log in to a user account
-- embers/register/ — Signup the user account 
-- embers/logout/ — logout the user account
-- embers/yourpage/ — Present the user’s personal info and pets
-- bers/addpet/ — Add new pet info
-- embers/editpet/<pet_id>/ — Edit an existing pet’s info
+- /petsitterapp/profile/<id>/ — Present the detail information of a pet sitter
+- /petsitterapp/about/ — Introduce the Pet Care team and services
+- /petsitterapp/searchresult/ — List pet sitters based on search criterias
+- /members/login/ — Log in to a user account
+- /members/register/ — Signup the user account 
+- /members/logout/ — logout the user account
+- /members/yourpage/ — Present the user’s personal info and pets
+- /members/addpet/ — Add new pet info
+- /memembers/editpet/<pet_id>/ — Edit an existing pet’s info
 
 ### Home (Index) Page
 <img src="https://github.com/ZKSN12/SWD-project/blob/main/readme_img/Picture1.png">
