@@ -17,7 +17,9 @@ URLs and features of the Petty Care web app:
 - bers/addpet/ — Add new pet info
 - embers/editpet/<pet_id>/ — Edit an existing pet’s info
 
-
+### Home (Index) Page
+    
+    
 
 ## Functions of Petty Care app
 
