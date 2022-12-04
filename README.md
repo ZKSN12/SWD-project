@@ -18,7 +18,7 @@ URLs and features of the Petty Care web app:
 - embers/editpet/<pet_id>/ — Edit an existing pet’s info
 
 ### Home (Index) Page
-    ![alt text](https://github.com/ZKSN12/SWD-project/blob/main/readme_img/Picture1.png)
+    ![alt text](https://github.com/ZKSN12/SWD-project/blob/main/readme_img/Picture1.png? raw=True)
     
     
 
