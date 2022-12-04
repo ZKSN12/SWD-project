@@ -1,6 +1,7 @@
 # Petty Care
 ## Motivation and target users
 Nowadays, more and more people choose to have a pet as a companion. However, there are circumstances, for example business travels, that pet owners have no time to take care of their pets. Consequently, there is a great demand for pet boarding services. Petty Care was therefore founded aiming to help pet owners find reliable sitters.
+
 The target users of the app are pet owners seeking pet boarding in Indiana and Illinois.
 
 
