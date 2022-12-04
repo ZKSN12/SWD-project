@@ -1,7 +1,9 @@
 # SWD-project
+## Motivation and target users
 
-# Instructions for installation
+## Functions of Petty Care app
 
-**Implemented Bootstrap in the app.** <br/>
+
+## Instructions for installation
 
     pip install -r requirements.txt
