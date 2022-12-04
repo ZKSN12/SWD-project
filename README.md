@@ -58,14 +58,14 @@ On the user’s profile page, they can add and edit their pet information.
 
 1. avigate to SWD-project folder
 2. ivate the Virtual Environment:
-    pipenv shell
-3 tall requirements: 
-    pip install -r requirements.txt
+        pipenv shell
+3. tall requirements: 
+        pip install -r requirements.txt
 4. Launch the local server:
-    python manage.py runserver
+        python manage.py runserver
 5. Open the Chrome browser, and enter the URL:
-http://18.218.104.41:8001/petsitterapp/
+    http://18.218.104.41:8001/petsitterapp/
 6. Login using test credential:
-    username: kexin
-    password: milkis123
+        username: kexin
+        password: milkis123
 
