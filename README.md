@@ -27,6 +27,10 @@ URLs and features of the Petty Care web app:
 
 - Through the navigation bar, users can access an “about us” page that provides the basic information about the Pet Care team and the services, a “pet sitter” page that shows all the available sitters at Petty Care, and the links to sign up/sign in.
 - Users can search pet sitters by zip code and price range. 
+  - An example for query parameters: 
+    - Boarding Here: **47906**
+    - $Min: **0**
+    - $Max: **45**
     
 ### Pet Sitters Page
 <img src="https://github.com/ZKSN12/SWD-project/blob/main/readme_img/Picture2.png">
